@@ -42,7 +42,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="/Resume.pdf"
+            href={process.env.PUBLIC_URL + "/Resume.pdf"}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary ms-2"
@@ -54,7 +54,7 @@ const Hero = () => {
         {/* RIGHT IMAGE SECTION */}
         <div className="hero-image">
           <img
-            src="assets/image/hero-image.png"
+            src={process.env.PUBLIC_URL + "/assets/hero-image.png"}
             alt="Prince Rakholiya working"
           />
         </div>

@@ -6,7 +6,7 @@ const Project = () => {
     {
       id: 1,
       title: "LED Lighting Store (Light Palace)",
-      image: "/assets/image/light.png",
+      image:  process.env.PUBLIC_URL + "/assets/light.png",
       description:
         "A modern e-commerce website for LED lights built using React for frontend and PHP + MySQL for backend. It includes cart, admin panel, and product management features.",
       tech: ["React", "MongoDB", "Node.js", "CSS"],
@@ -16,7 +16,7 @@ const Project = () => {
     {
       id: 2,
       title: "Realestate Property Management System",
-      image: "/assets/image/property.png",
+      image:  process.env.PUBLIC_URL + "/assets/property.png",
       description:
         "A React.js application for managing real estate properties with MongoDB backend. Features include add-to-cart functionality, property listings, and user authentication.",
       tech: ["React", "MongoDB", "Node.js", "CSS"],
@@ -26,7 +26,7 @@ const Project = () => {
     {
       id: 3,
       title: "Pharmacy Management System",
-      image: "/assets/image/pharmacy.png",
+      image:  process.env.PUBLIC_URL + "/assets/pharmacy.png",
       description:
         "A React.js based pharmacy management system with admin panel and add-to-cart functionality. Users can browse medicines, place orders, and admins can manage inventory efficiently.",
       tech: ["PHP", "MySQL", "CSS"],

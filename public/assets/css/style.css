@@ -657,7 +657,6 @@ body {
 }
 
 .contact-img {
-  height: 30vh;
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -767,5 +766,11 @@ body {
 @media (max-width: 900px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:426px) {
+  .contact-img {
+    max-height: 46vw;
   }
 }

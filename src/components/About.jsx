@@ -7,7 +7,7 @@ const About = () => {
         {/* ==== Left Image ==== */}
         <div className="about-left">
           <img
-            src="/assets/image/ab.jpg"
+            src={process.env.PUBLIC_URL + "/assets/ab.jpg"}
             alt="About Me"
             className="about-img"
           />

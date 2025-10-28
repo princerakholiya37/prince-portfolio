@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -8,6 +8,41 @@ import {
 } from "react-icons/fa";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // WhatsApp number (your number)
+    const phoneNumber = "919512437598"; // use country code, without '+'
+
+    // Construct message
+    const message = `Hi Prince 👋,%0A
+I am ${formData.name}.%0A
+📞 Phone: ${formData.phone}%0A
+✉️ Email: ${formData.email}%0A
+📝 Subject: ${formData.subject}%0A
+💬 Message: ${formData.message}`;
+
+    // WhatsApp redirect link
+    const url = `https://wa.me/${9512437598}?text=${message}`;
+
+    // Redirect to WhatsApp
+    window.open(url, "_blank");
+  };
+
   return (
     <section className="contact-section" id="contact">
       <div className="container">
@@ -18,7 +53,7 @@ const Contact = () => {
           {/* Left Side */}
           <div className="contact-info-card">
             <img
-              src="/assets/image/contact.png"
+              src={process.env.PUBLIC_URL + "/assets/contact.png"}
               alt="Handshake"
               className="contact-img"
             />
@@ -48,7 +83,7 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/prince-rakholiya-a921ba346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  href="https://www.linkedin.com/in/prince-rakholiya-a921ba346"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -56,14 +91,18 @@ const Contact = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/prince_rakholiya_official?igsh=MTZ6bXk2b2RnM3lxOA=="
+                  href="https://www.instagram.com/prince_rakholiya_official"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaInstagram />
                 </a>
 
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://github.com/princerakholiya37"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FaGithub />
                 </a>
               </div>
@@ -72,21 +111,49 @@ const Contact = () => {
 
           {/* Right Side */}
           <div className="contact-form-card">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <label>YOUR NAME</label>
-              <input type="text" name="name" required />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
 
               <label>PHONE NUMBER</label>
-              <input type="tel" name="phone" required />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
 
               <label>EMAIL</label>
-              <input type="email" name="email" required />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
 
               <label>SUBJECT</label>
-              <input type="text" name="subject" />
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+              />
 
               <label>YOUR MESSAGE</label>
-              <textarea name="message" rows="4"></textarea>
+              <textarea
+                name="message"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
 
               <button type="submit" className="send-btn">
                 SEND MESSAGE <FaArrowRight className="arrow-icon" />
