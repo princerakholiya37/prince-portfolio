@@ -1,42 +1,66 @@
 import React from "react";
-import { Code2, Monitor, Database } from "lucide-react"; // for icons
+import { Code2, Database, Monitor, ShieldCheck } from "lucide-react";
 
 const Service = () => {
   const services = [
     {
-      icon: <Code2 size={40} color="#ff0057" />,
+      icon: Code2,
       title: "Software Development",
       description:
-        "As a Full Stack Developer, I build scalable and robust applications using modern technologies like React, Node.js, and Express. I focus on clean architecture and efficient performance.",
+        "Scalable full-stack applications using React, Node.js, and Express with clean structure, reusable logic, and reliable performance.",
     },
     {
-      icon: <Monitor size={40} color="#ff0057" />,
+      icon: Monitor,
       title: "Frontend Development",
       description:
-        "I specialize in crafting responsive, dynamic, and visually engaging UIs using React and modern CSS frameworks. I ensure seamless user experiences across all devices.",
+        "Responsive, dynamic, and visually engaging interfaces using React and modern Tailwind CSS for smooth experiences on every device.",
     },
     {
-      icon: <Database size={40} color="#ff0057" />,
+      icon: Database,
       title: "Database Management",
       description:
-        "I design and optimize databases using MySQL and MongoDB for reliable performance and smooth integration with applications. I focus on data security and scalability.",
+        "Efficient MySQL and MongoDB database design with practical data flow, optimization, and secure integration with applications.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Clean Deployment",
+      description:
+        "Production-ready project structure, maintainable components, responsive layouts, and performance-minded delivery.",
     },
   ];
 
   return (
-    <section className="service-section" id="services">
-      <div className="container">
-        <p className="service-subtitle">SERVICES</p>
-        <h2 className="service-title">What I Do</h2>
+    <section className="bg-slate-950 py-24 sm:py-28" id="services">
+      <div className="section-shell">
+        <div className="mx-auto max-w-3xl text-center" data-reveal>
+          <p className="eyebrow">Services</p>
+          <h2 className="section-heading">What I can build for you</h2>
+          <p className="mt-5 text-slate-400">
+            From frontend polish to backend logic, I focus on experiences that
+            look sharp, load fast, and stay easy to maintain.
+          </p>
+        </div>
 
-        <div className="service-grid">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {services.map((service, index) => (
-            <div class="service">
-              <div className="service-card" key={index}>
-                <div className="service-icon">{service.icon}</div>
-                <h3 className="service-name">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
+            <div
+              className="glass-card group rounded-[2rem] p-6 transition duration-300 hover:-translate-y-2 hover:border-teal-300/40 hover:bg-teal-300/10"
+              key={service.title}
+              data-reveal="zoom"
+              style={{ "--reveal-delay": `${index * 100}ms` }}
+            >
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-300 text-slate-950 shadow-glow transition group-hover:rotate-3 group-hover:scale-110">
+                <service.icon size={28} />
               </div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-200">
+                0{index + 1}
+              </p>
+              <h3 className="mt-3 font-display text-2xl font-bold text-white">
+                {service.title}
+              </h3>
+              <p className="mt-4 leading-7 text-slate-400">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
