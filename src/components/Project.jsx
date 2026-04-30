@@ -71,7 +71,7 @@ const Project = () => {
                   className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <span className="absolute left-5 top-[83%] rounded-full bg-slate-950/75 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-teal-200 backdrop-blur-xl">
+                <span className="absolute left-5 top-5 rounded-full bg-slate-950/75 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-teal-200 backdrop-blur-xl">
                   {project.category}
                 </span>
               </div>
