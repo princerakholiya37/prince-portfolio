@@ -1,5 +1,5 @@
 {
-  "homepage": "https://princerakholiya37.github.io./portfolio",
+  "homepage": "https://princerakholiya37.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-icon": "^1.0.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.9.4",
+    "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.9.3",
     "react-type-animation": "^3.2.0",
