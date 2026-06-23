@@ -61,7 +61,7 @@ const Hero = () => {
             </Link>
 
             <a
-              href={process.env.PUBLIC_URL + "/Resume.pdf"}
+              href={process.env.PUBLIC_URL + "/Cv_prince.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-xl transition hover:-translate-y-1 hover:border-teal-300/60 hover:text-teal-200"
